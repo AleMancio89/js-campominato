@@ -1,11 +1,39 @@
+body{
+  background-color: black;
+}
+
 .container {
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: red;
-  text-align: center;
+  background-color: #edf1f5;
+  border-radius: 5px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .container.play {
   display: none;
+}
+
+.container.start h1{
+  text-align: center;
+  margin: 20px 0;
+}
+
+.container.start span {
+  font-weight: bold;
+}
+
+.container.start .input-group{
+  margin: 30px 0;
+}
+
+.container.play {
+  display: none;
+}
+
+
+
+#startBtn {
+
 }
