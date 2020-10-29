@@ -23,5 +23,3 @@ function rangePermitted(num, min, max){
   }
   return false;
 }
-
-//Funzione per verificare se il numero è vincente

@@ -7,49 +7,54 @@ var MAX_BOUND_HARD = 50;
 var maxBound = MAX_BOUND_EASY;
 var rounds = maxBound - RANDOM_NUMBERS;
 
-// // ++INIZIO DA DEFINIRE++ Seleziono livello di difficoltà adattando il numero di tentativi massimi
-//
-// var isEasyEl = document.getElementById('easy');
-// var isMediumEl = document.getElementById('medium');
-// var isHardEl = document.getElementById('hard');
-// var startBtn = document.getElementById('startBtn');
-//
-//
-// startBtn.addEventListener('click', function(){
-//
-//   isEasy = isEasyEl.selected;
-//   isMedium = isMediumEl.selected;
-//   isHard = isHardEl.selected;
-//
-//   if (isMedium) {
-//     maxBound = MAX_BOUND_MEDIUM;
-//   } else if (isHard) {
-//     maxBound = MAX_BOUND_HARD;
-//   } else {
-//     maxBound = MAX_BOUND_EASY;
-//   }
-//
-//   console.log(maxBound + 'VALORE AGGIORNATO');
-//
-// });
-//
-//
-// // ++FINE DA DEFINIRE++ Definisco array vuoto e lo riempio con 16 numeri random non uguali tra loro
+// Seleziono livello di difficoltà adattando il numero di tentativi massimi
+
+var isEasyEl = document.getElementById('easy');
+var isMediumEl = document.getElementById('medium');
+var isHardEl = document.getElementById('hard');
+var startBtn = document.getElementById('startBtn');
+var startEl = document.getElementById('start');
+var playEl = document.getElementById('play');
+
 
 var computerNumbers = [];
 
-var i = 0;
-while (computerNumbers.length < RANDOM_NUMBERS) {
-  var randomPcNumber = (randomNumber(MIN_BOUND, maxBound));
-  if (isMatchInArray(randomPcNumber, computerNumbers)) {
-    computerRandomNumber = randomNumber(MIN_BOUND, maxBound);
-  } else{
-    computerNumbers.push(randomPcNumber);
-  }
-  i++;
-}
 
-console.log(computerNumbers.sort());
+startBtn.addEventListener('click', function(){
+
+  //Permetto al giocatore di scegliere la difficoltà
+
+  isEasy = isEasyEl.selected;
+  isMedium = isMediumEl.selected;
+  isHard = isHardEl.selected;
+
+  if (isMedium) {
+    maxBound = MAX_BOUND_MEDIUM;
+  } else if (isHard) {
+    maxBound = MAX_BOUND_HARD;
+  } else {
+    maxBound = MAX_BOUND_EASY;
+  }
+
+  //Creo numeri random per il pc e li salvo in un array
+
+  var i = 0;
+  while (computerNumbers.length < RANDOM_NUMBERS) {
+    var randomPcNumber = (randomNumber(MIN_BOUND, maxBound));
+    if (!isMatchInArray(randomPcNumber, computerNumbers)) {
+      computerNumbers.push(randomPcNumber);
+    }
+    i++;
+  }
+
+  console.log(computerNumbers.sort());
+
+
+  startEl.style.display = 'none';
+  playEl.style.display = 'block';
+
+
+});
 
 
 //Chiedo all'utente di inserire un numero fino ad 84 volte
@@ -89,9 +94,6 @@ inputBtn.addEventListener('click', function(){
   }
 
 
-  console.log(attempts.sort());
-
-
   var scoreEl = document.getElementById('score');
   var leftEl = document.getElementById('left');
   var listAttemptEl = document.getElementById('listAttempt');
@@ -103,3 +105,13 @@ inputBtn.addEventListener('click', function(){
   doneEl.innerHTML = userAttempts;
 
 });
+
+// Gestisco il pulsante per il refresh della pagina
+
+var reloadBtn = document.getElementById('reloadBtn');
+
+reloadBtn.addEventListener('click', function(){
+
+  location.reload();
+
+})

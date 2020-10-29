@@ -4,23 +4,37 @@
     <meta charset="utf-8">
     <title>Campo Minato</title>
     <script src="js/functions.js" charset="utf-8"></script>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
+    <div id="start" class="container start">
+      <h1>Campo minato by Boolean</h1>
+      <ol>
+        <li>Come si gioca: inserisci un numero alla volta, ogni numero rappresenta un passo che puoi far all'interno del campo minato e tenta di evitare di calpestare una mina. Calpesta tutto il campo sprovvisto di mine e vinci!</li>
+        <li>Scegli il tuo livello di difficoltà: livello di difficoltà e probabilità di calpestare una mina sono direttamente proporzionali, fa del tuo meglio!</li>
+      </ol>
+      <select>
+        <option id="easy">Difficoltà 0</option>
+        <option id="medium">Difficoltà 1</option>
+        <option id="hard">Difficoltà 2</option>
+      </select>
+      <button id="startBtn" type="button" name="button">Inizia a giocare</button>
+    </div>
 
-    <select>
-      <option id="easy">Difficoltà 0</option>
-      <option id="medium">Difficoltà 1</option>
-      <option id="hard">Difficoltà 2</option>
-    </select>
-    <button id="startBtn" type="button" name="button">Inizia a giocare</button>
 
-    <input id="input" type="text" placeholder="inserisci il tuo numero">
-    <button id="inputBtn" type="button" name="button">Tenta la sorte</button>
+    <div id="play" class="container play">
+      <input id="input" type="text" placeholder="inserisci il tuo numero">
+      <button id="inputBtn" type="button" name="button">Tenta la sorte</button>
 
-    <p>Punteggio: <span id="score"></span></p>
-    <p>La vittoria è lontana solo: <span id="left">84</span> scelte!</p>
-    <p id="listAttempt">Numeri già inseriti: </p>
-    <p>Tentativi effettuati: <span id="done"></span></p>
+      <p>Punteggio: <span id="score"></span></p>
+      <p>La vittoria è lontana solo: <span id="left">84</span> scelte!</p>
+      <p id="listAttempt">Numeri già inseriti: </p>
+      <p>Tentativi effettuati: <span id="done"></span></p>
+      <button id="reloadBtn" type="button">&#8634; Gioca Ancora</button>
+    </div>
+
+
+
 
 
 
