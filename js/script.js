@@ -15,6 +15,7 @@ var isHardEl = document.getElementById('hard');
 var startBtn = document.getElementById('startBtn');
 var startEl = document.getElementById('start');
 var playEl = document.getElementById('play');
+var leftEl = document.getElementById('left');
 
 
 var computerNumbers = [];
@@ -36,15 +37,15 @@ startBtn.addEventListener('click', function(){
     maxBound = MAX_BOUND_EASY;
   }
 
+  rounds = maxBound - RANDOM_NUMBERS;
+
   //Creo numeri random per il pc e li salvo in un array
 
-  var i = 0;
   while (computerNumbers.length < RANDOM_NUMBERS) {
     var randomPcNumber = (randomNumber(MIN_BOUND, maxBound));
     if (!isMatchInArray(randomPcNumber, computerNumbers)) {
       computerNumbers.push(randomPcNumber);
     }
-    i++;
   }
 
   console.log(computerNumbers.sort());
@@ -52,6 +53,7 @@ startBtn.addEventListener('click', function(){
 
   startEl.style.display = 'none';
   playEl.style.display = 'block';
+  leftEl.innerHTML = rounds;
 
 
 });
@@ -95,13 +97,11 @@ inputBtn.addEventListener('click', function(){
 
 
   var scoreEl = document.getElementById('score');
-  var leftEl = document.getElementById('left');
   var listAttemptEl = document.getElementById('listAttempt');
 
   scoreEl.innerHTML = userAttempts;
-  leftEl.innerHTML = rounds;
   listAttemptEl.innerHTML += (inputNumber + ' - ');
-  
+
 });
 
 // Gestisco il pulsante per il refresh della pagina
