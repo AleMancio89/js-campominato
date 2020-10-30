@@ -75,7 +75,7 @@ inputBtn.addEventListener('click', function(){
 
   //Imposto ciclo per stabilire se numero è idoneo a far continuare il gioco o no, in caso contrario il gioco finisce
 
-  if ( !isMatchInArray(inputNumber, computerNumbers) && rangePermitted(inputNumber, MIN_BOUND, maxBound)) {
+  if ( !isMatchInArray(inputNumber, computerNumbers) && !isMatchInArray(inputNumber, attempts) && rangePermitted(inputNumber, MIN_BOUND, maxBound)) {
     attempts.push(inputNumber);
     userAttempts++;
     rounds--;
@@ -97,13 +97,11 @@ inputBtn.addEventListener('click', function(){
   var scoreEl = document.getElementById('score');
   var leftEl = document.getElementById('left');
   var listAttemptEl = document.getElementById('listAttempt');
-  var doneEl = document.getElementById('done');
 
   scoreEl.innerHTML = userAttempts;
   leftEl.innerHTML = rounds;
   listAttemptEl.innerHTML += (inputNumber + ' - ');
-  doneEl.innerHTML = userAttempts;
-
+  
 });
 
 // Gestisco il pulsante per il refresh della pagina

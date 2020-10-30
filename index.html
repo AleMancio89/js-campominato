@@ -34,26 +34,22 @@
     <div id="play" class="container play">
       <div class="row">
         <div class="col">
-          <input id="input" type="text" placeholder="inserisci il tuo numero">
-          <button id="inputBtn" type="button" name="button">Tenta la sorte</button>
+          <input id="input" type="text" placeholder="Inserisci numero">
+          <button id="inputBtn" class="btn btn-outline-secondary" type="button">Tenta la sorte</button>
 
+        </div>
+        <div class="col">
           <p>Punteggio: <span id="score"></span></p>
           <p>La vittoria è lontana solo: <span id="left">84</span> scelte!</p>
-          <p id="listAttempt">Numeri già inseriti: </p>
-          <p>Tentativi effettuati: <span id="done"></span></p>
-          <button id="reloadBtn" type="button">&#8634; Gioca Ancora</button>
+          <button id="reloadBtn" class="btn btn-outline-secondary" type="button">&#8634; Gioca Ancora</button>
+        </div>
+        <div class="col">
+          <p>Numeri già inseriti:</p>
+          <p id="listAttempt"></p>
         </div>
       </div>
+
     </div>
-
-
-
-
-
-
-
-
-
 
 
     <script src="js/script.js" charset="utf-8"></script>

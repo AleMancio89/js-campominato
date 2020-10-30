@@ -11,6 +11,10 @@ body{
   transform: translate(-50%, -50%);
 }
 
+.container .col {
+  min-height: 300px;
+}
+
 .container.play {
   display: none;
 }
@@ -30,6 +34,31 @@ body{
 
 .container.play {
   display: none;
+}
+
+.container.play .col{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.container.play .col:last-child{
+  justify-content: center;
+}
+
+.container.play .col:first-child *{
+  width: 80%;
+}
+
+#input {
+  height: 40%;
+  font-size: 1.8rem;
+  text-align: center;
+}
+
+#inputBtn{
+  height: 80px;
 }
 
 
