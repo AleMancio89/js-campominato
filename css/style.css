@@ -2,13 +2,16 @@ body{
   background-color: black;
 }
 
-.container {
-  background-color: #edf1f5;
+.container {  
   border-radius: 5px;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+.container:first-of-type{
+  background-color: #edf1f5;
 }
 
 .container .col {
@@ -36,7 +39,56 @@ body{
   display: none;
 }
 
-.container.play .col{
+.dashboard{
+  width: 600px;
+  height: 600px;
+  margin: auto;
+}
+
+.dashboard .cell{
+  background-color: lightgrey;
+  border: 1px solid grey;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 80%;
+}
+
+.dashboard .cell:hover{
+  background-color: grey;
+}
+
+.dashboard .cell.easy{
+  width: calc(100% / 10);
+  height: calc(100% / 10);
+}
+
+.dashboard .cell.medium{
+  width: calc(100% / 9);
+  height: calc(100% / 9);
+}
+
+.dashboard .cell.hard{
+  width: calc(100% / 7);
+  height: calc(100% / 7);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* VECCHIO CSS */
+
+/* .container.play .col{
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -65,4 +117,4 @@ body{
 
 #startBtn {
 
-}
+} */
